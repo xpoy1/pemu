@@ -254,14 +254,10 @@ elseif (PLATFORM_3DS)
             ${DEVKITPRO}/libctru/include
             ${DEVKITPRO}/portlibs/armv6k/include)
     list(APPEND FLAGS -DARM11 -D_3DS -D__3DS__
-            -DNO_KEYBOARD -D__PFBA_ARM__ -DUSE_FILE32API -DLSB_FIRST
+            -DNO_KEYBOARD -DUSE_FILE32API -DLSB_FIRST
             -ffunction-sections -fomit-frame-pointer)
-    list(APPEND LDFLAGS
-            ${DEVKITPRO}/portlibs/armv6k/lib/libpng.a
-            ${DEVKITPRO}/portlibs/armv6k/lib/libz.a
-            ${DEVKITPRO}/libctru/lib/libcitro3d.a
-            ${DEVKITPRO}/libctru/lib/libctru.a
-            m)
+    #-D__PFBA_ARM__
+    list(APPEND LDFLAGS)
 elseif (PLATFORM_SWITCH)
     ##############
     # NX (SWITCH)
